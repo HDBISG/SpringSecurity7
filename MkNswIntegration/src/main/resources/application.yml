@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: spring-security-jwt
+  profiles:
+#    active: @active.target.profile@
+    active: dev
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        enable_lazy_load_no_trans: true
+        #criteria:
+          #literal_handling_mode: BIND
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+#       org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#       org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+#  jackson:
+#    use-jackson2-defaults: true
+
+server:
+  servlet:
+    context-path: /mknsw-integration

@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.vcc.camelone</groupId>
+		<artifactId>pomr</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<groupId>com.guud</groupId>
+	<artifactId>mknsw</artifactId>
+	<packaging>pom</packaging>
+	<name>mknsw</name>
+	<description>mknsw</description>
+
+	<properties>
+		<java-version>17</java-version>
+		<maven.test.skip>true</maven.test.skip>
+	</properties>
+
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<properties>
+				<active.target.profile>local</active.target.profile>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<active.target.profile>dev</active.target.profile>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>prod</id>
+			<properties>
+				<active.target.profile>prod</active.target.profile>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+	</profiles>
+
+	<modules>
+		<module>MkNswIntegration</module>
+	</modules>
+	
+</project>

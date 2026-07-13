@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/NMK
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: NMK
+    password: password
+
+server:
+  port: 8000
+  error:
+    include-message: always
+
+rsa:
+  private-key: classpath:certs/private-key.pem
+  public-key: classpath:certs/public-key.pem
+
+logging:
+  level:
+    org:
+      springframework: INFO
